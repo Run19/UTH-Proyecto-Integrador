@@ -18,7 +18,7 @@ public abstract class Person {
 
     public void addNumber(PhoneNumber phoneNumber) {
         phoneNumbers.add(phoneNumber);
-        System.out.println("Numero aniadido");
+        System.out.println("Numero añadido");
 
     }
 

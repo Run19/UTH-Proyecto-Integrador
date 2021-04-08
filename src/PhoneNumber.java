@@ -38,6 +38,6 @@ public class PhoneNumber {
 
     @Override
     public String toString() {
-        return this.lada + this.number + " " + this.company;
+        return ""+this.lada + this.number + " " + this.company;
     }
 }
