@@ -2,20 +2,20 @@ import java.util.List;
 
 public class Client extends Person {
     private final int clientId;
-    private final Date dateBirth;
+    private final Date birthDate;
 
-    public Client(String name, String lastname, int clientId, PhoneNumber phoneNumber, Date dateOfBirth) {
+    public Client(String name, String lastname, int clientId, PhoneNumber phoneNumber, Date birthDate) {
         super(name, lastname);
         this.clientId = clientId;
         super.phoneNumbers.add(phoneNumber);
-        this.dateBirth = dateOfBirth;
+        this.birthDate = birthDate;
 
     }
 
-    public Client(String name, String lastname, int clientId, Date dateOfBirth, List<PhoneNumber> phoneNumber) {
+    public Client(String name, String lastname, int clientId, Date birthDate, List<PhoneNumber> phoneNumber) {
         super(name, lastname);
         this.clientId = clientId;
-        this.dateBirth = dateOfBirth;
+        this.birthDate = birthDate;
         super.phoneNumbers = phoneNumber;
     }
 
@@ -32,7 +32,7 @@ public class Client extends Person {
         stringBuilder.append("Clienteid :").append(clientId);
         stringBuilder.append(", Nombre: ").append(name).append('\'');
         stringBuilder.append(", Apellido: ").append(lastname).append('\'');
-        stringBuilder.append(", Dia de nacimiento: ").append(dateBirth.shortDate()).append('\'');
+        stringBuilder.append(", Dia de nacimiento: ").append(birthDate.shortDate()).append('\'');
         stringBuilder.append(", Numeros de telefono: ").append(phoneNumbers);
 
 
