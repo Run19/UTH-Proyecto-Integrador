@@ -5,7 +5,7 @@ public abstract class Person {
     protected String name;
     protected String lastname;
     public List<PhoneNumber> phoneNumbers = new ArrayList<>();
-
+    
 
     public void showNumbers() {
         for (int i = 0; i < phoneNumbers.size(); i++) {
@@ -23,21 +23,17 @@ public abstract class Person {
     }
 
     public String removeNumber() {
-        for (int i = 0; i < phoneNumbers.size(); i++) {
-            System.out.print(i + ") ");
-            System.out.println(phoneNumbers.get(i));
-
-        }
-        Scanner input = new Scanner(System.in);
-        System.out.print("Que numero quieres borrar?: ");
-        int i = input.nextInt();
-
-        phoneNumbers.remove(i);
-
-        System.out.println("Ahora tus numeros son: ");
         showNumbers();
 
-        return "";
+        Scanner input = new Scanner(System.in);
+        System.out.print("Que numero quieres borrar?: ");
+
+        int i = input.nextInt();
+
+        var dataNumber = phoneNumbers.get(i);
+        phoneNumbers.remove(i);
+
+        return "El numero %s ha sido removido".formatted(dataNumber);
     }
 
 
@@ -47,7 +43,7 @@ public abstract class Person {
     }
 
 
-    public abstract String showProperties();
+    public abstract String show();
 
     public String getName() {
         return this.name;
