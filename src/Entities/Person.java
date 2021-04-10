@@ -1,3 +1,7 @@
+package Entities;
+
+import Utilities.PhoneNumber;
+
 import java.util.*;
 
 //CHEMA
@@ -5,7 +9,7 @@ public abstract class Person {
     protected String name;
     protected String lastname;
     public List<PhoneNumber> phoneNumbers = new ArrayList<>();
-    
+
 
     public void showNumbers() {
         for (int i = 0; i < phoneNumbers.size(); i++) {

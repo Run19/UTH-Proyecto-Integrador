@@ -1,3 +1,7 @@
+package Time;
+
+import static Util.Util.*;
+
 public class Date {
     private int day;
     private int month;
@@ -16,15 +20,6 @@ public class Date {
         this.year = year;
     }
 
-    private String twoDigits(int num) {
-        String number = "" + num;
-        if (num < 10) {
-            number = "0" + num;
-        } else if (num > 99) {
-            number = number.substring(number.length() - 2);
-        }
-        return number;
-    }
 
     public String shortDate() {
         return (twoDigits(this.day) + "/" + twoDigits(this.month) + "/" + this.year);

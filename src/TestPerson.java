@@ -1,3 +1,7 @@
+import Entities.Client;
+import Time.Date;
+import Utilities.PhoneNumber;
+
 public class TestPerson {
     public static void main(String[] args) {
         PhoneNumber p1 = new PhoneNumber(221, 5380878, "Telcel");
