@@ -7,7 +7,7 @@ public class PhoneNumber {
     private String company;
 
 
-    PhoneNumber(int lada, int number, String company) {
+    public PhoneNumber(int lada, int number, String company) {
         this.lada = lada;
         this.number = number;
         this.company = company;

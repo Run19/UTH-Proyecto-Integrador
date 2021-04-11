@@ -1,6 +1,7 @@
 package Entities;
 
 import Time.Date;
+import Utilities.PhoneNumber;
 import Utilities.Shift;
 
 public class Employee extends Person {
@@ -11,10 +12,14 @@ public class Employee extends Person {
     private Date employeeSince;
     private Shift shift;
 
-    public Employee(String name, String lastname) {
-        super(name, lastname);
-    }
 
+    public Employee(String name, String lastname, Entities.EmployeeType employeeType, float salary, Date employeeSince, Shift shift) {
+        super(name, lastname);
+        EmployeeType = employeeType;
+        this.salary = salary;
+        this.employeeSince = employeeSince;
+        this.shift = shift;
+    }
 
     @Override
     public String show() {
