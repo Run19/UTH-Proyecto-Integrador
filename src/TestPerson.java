@@ -1,4 +1,5 @@
 import Engine.Administrator;
+import Engine.Menu;
 import Entities.Client;
 import Entities.Employee;
 import Entities.EmployeeType;
@@ -6,16 +7,59 @@ import Time.Date;
 import Utilities.PhoneNumber;
 import Utilities.Shift;
 
+
 public class TestPerson {
     public static void main(String[] args) {
-        PhoneNumber p1 = new PhoneNumber(221, 5380878, "Telcel");
-        PhoneNumber p2 = new PhoneNumber(227, 1035217, "Movistar");
-        Date d1 = new Date(25, 9, 2002);
-        Client c1 = new Client("Juan", "Amaro", 100003, new PhoneNumber(522, 6441234, "Movistar"), d1);
-        Employee juanitoPelengas = new Employee("Juanit", "Lopez", EmployeeType.programmer,
-                350, new Date(15, 8, 21), Shift.morning);
-        Administrator administrator = new Administrator();
-        System.out.println(administrator.contractEmployee(juanitoPelengas));
+        Menu menu = new Menu();
+
+//        Client cliente1 = new Client("Juan", "Ramirez", 1, new PhoneNumber(227,
+//                5565432,"Movistar"),
+//                new Date(12,9,2015));
+//        System.out.println(cliente1.show());
+
+       System.out.println("\t\t INTERUN");
+//
+            menu.showMenu();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        PhoneNumber p1 = new PhoneNumber(221, 5380878, "Telcel");
+//        PhoneNumber p2 = new PhoneNumber(227, 1035217, "Movistar");
+//        Date d1 = new Date(25, 9, 2002);
+//        Client c1 = new Client("Juan", "Amaro", 100003, new PhoneNumber(522,
+//                6441234, "Movistar"), d1);
+//
+//        Employee juanitoPelengas = new Employee("Juanito", "Lopez", EmployeeType.programmer,
+//                350, new Date(15, 8, 21), Shift.morning);
+//        Administrator administrator = new Administrator();
+//        System.out.println(administrator.contractEmployee(juanitoPelengas));
+//        administrator.fireEmploye();
+
         //        System.out.println(c1.show());
 //        System.out.println("--------------------------------------------------------------------------------------------");
 //        c1.addNumber(new PhoneNumber(744, 5436745, "Verizon"));

@@ -21,7 +21,8 @@ public class Client extends Person {
 
     }
 
-    public Client(String name, String lastname, int clientId, Date clientSince, List<PhoneNumber> phoneNumber, List<ServiceType> services) {
+    public Client(String name, String lastname, int clientId,
+                  Date clientSince, List<PhoneNumber> phoneNumber, List<ServiceType> services) {
         super(name, lastname);
         this.clientId = clientId;
         this.clientSince = clientSince;
@@ -40,7 +41,7 @@ public class Client extends Person {
         return "Clienteid :" + clientId +
                 ", Nombre: " + name + '\'' +
                 ", Apellido: " + lastname + '\'' +
-                ", Dia de nacimiento: " + clientSince.shortDate() + '\'' +
+                ", Cliente desde: " + clientSince.shortDate() + '\'' +
                 ", Numeros de telefono: " + phoneNumbers;
     }
 
