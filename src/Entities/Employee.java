@@ -26,6 +26,19 @@ public class Employee extends Person {
         return " Nombre del empleado" + super.name;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                " name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", EmployeeType=" + EmployeeType +
+                ", salary=" + salary +
+                ", employeeSince=" + employeeSince.shortDate() +
+                ", shift=" + shift +
+
+                '}';
+    }
+
     public EmployeeType getEmployeeType() {
         return EmployeeType;
     }

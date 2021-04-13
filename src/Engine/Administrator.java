@@ -2,20 +2,18 @@ package Engine;
 
 import Entities.Client;
 import Entities.Employee;
-import Time.Date;
 import Utilities.Order;
-import Utilities.PhoneNumber;
+
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Administrator {
-    private List<Client> clients = new ArrayList<>();
+
+    public List<Client> clients = new ArrayList<>();
     private List<Employee> staff = new ArrayList<>();
-    private List<Order> orders = new ArrayList<>();
-
-
+    public List<Order> orders = new ArrayList<>();
 
 
     public Administrator(List<Client> clients, List<Employee> staff, List<Order> orders) {
@@ -31,64 +29,77 @@ public class Administrator {
 
     }
 
-    public void showClients(){
+    public void showClients() {
         for (int i = 0; i < clients.size(); i++) {
-            System.out.println(i + ") " + clients.get(i));
+            var num = i+1;
+            System.out.println(num + ")" + this.clients.get(i));
+
         }
 
     }
-    public void showStaff(){
-        System.out.println(staff);
+
+    public void showStaff() {
+        for (int i = 0; i < staff.size(); i++) {
+            int num = i + 1;
+            System.out.println(num + ")" + staff.get(i));
+        }
     }
 
-    public String addClient(Client c){
+    public void addClient(Client c) {
         this.clients.add(c);
-        return "Se ha anadido el cliente " + c.getName();
+        System.out.println("Se ha agregado correctamente");
     }
 
-    public void addOrder(Order order){
+    public void addOrder(Order order) {
         this.orders.add(order);
         System.out.println("Se ha creado la Orden");
     }
 
-    public void showOrders(){
+    public void showOrders() {
         for (int i = 0; i < orders.size(); i++) {
-            System.out.println(i + ")" + orders.get(i));
+            var num = i + 1;
+            System.out.println(num + ")" + this.orders.get(i));
         }
     }
-    public void removeOrder(){
+
+    public void removeOrder() {
+        Scanner input = new Scanner(System.in);
         showOrders();
         System.out.println("Que orden quieres remover?");
+        int opc = input.nextInt();
+            opc = opc -1;
+            orders.remove(opc);
+        System.out.println("Se ha removido correctamente");
+
+
     }
 
 
-    public void provideService(){
-
-        clients.add(new Client("Juan", "Ramon",6,new PhoneNumber(255,6534231,"TELCEL"),
-                new Date(11,4,2021)));
+    public void provideService() {
+        //  clients.add(new Client("Juan", "Ramon",6,new PhoneNumber(255,6534231,"TELCEL"),
+        //  new Date(11,4,2021)));
 
     }
 
-    public String contractEmployee(Employee newEmployee) {
+    public void contractEmployee(Employee newEmployee) {
         staff.add(newEmployee);
 
-        return "%s ha sido contratado".formatted(newEmployee.getName());
-
+        System.out.printf("%s ha sido contratado%n", newEmployee.getName());
     }
 
     public void fireEmploye() {
         Scanner input = new Scanner(System.in);
 
-            for (int i = 0; i < staff.size(); i++) {
-                System.out.println(i + ")" + staff.get(i).getName());
-            }
+        for (int i = 0; i < staff.size(); i++) {
+            int num = i + 1;
+            System.out.println(num + ")" + staff.get(i).getName());
+        }
         System.out.println("Que empleado quieres remover?");
-            int i = input.nextInt();
+        int op = input.nextInt();
+            op = op-1;
+        staff.remove(op);
 
-            staff.remove(i);
-        System.out.println("*********************************");
         System.out.println("Se ha removido corrrectamente");
-        System.out.println("*********************************");
 
 
     }

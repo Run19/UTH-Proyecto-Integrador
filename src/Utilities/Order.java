@@ -3,35 +3,34 @@ package Utilities;
 import Entities.Client;
 import Entities.Employee;
 
+import javax.swing.plaf.IconUIResource;
+
 public class Order {
 
     private int orderId;
     private Client client;
-    private Employee employee;
+
     private String orderDescription;
     private ServiceType serviceType;
+    public static  int cont;
 
 
-    public Order(int orderId, Client client, Employee employee, String orderDescription,ServiceType serviceType) {
-        this.orderId = orderId;
+    public Order( Client client, String orderDescription,ServiceType serviceType) {
+        this.orderId = ++cont;
         this.client = client;
-        this.employee = employee;
+
         this.orderDescription = orderDescription;
         this.serviceType = serviceType;
 
     }
 
-    public Order(int orderId, Client client, Employee employee) {
-        this.orderId = orderId;
-        this.client = client;
-        this.employee = employee;
-    }
+
 
     @Override
     public String toString() {
         return "Order{" +
                 "orderId=" + orderId +
-                ", client=" + client.show() +
+                ", client=" + client.getName() +
                 ", orderDescription='" + orderDescription + '\'' +
                 ", serviceType=" + serviceType +
                 '}';

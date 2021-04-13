@@ -19,21 +19,18 @@ public class TestPerson {
 
        System.out.println("\t\t INTERUN");
 //
-            menu.showMenu();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+           menu.showMenu();
+//        Client c1 = new Client("Jose Maria", "GArcia Ramirez", new PhoneNumber(644,2278741,"Movistar"),
+//                new Date(14,4,2021));
+//        Client c2 = new Client(" Maria", " Ramirez", new PhoneNumber(644,2278741,"Movistar"),
+//                new Date(14,4,2021));
+//
+//        Administrator admin = new Administrator();
+//
+//        admin.addClient(c1);
+//        admin.addClient(c2);
+//
+//        admin.showClients();
 
 
 

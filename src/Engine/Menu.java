@@ -1,28 +1,14 @@
 package Engine;
-import Entities.Client;
-import Entities.Employee;
-import Entities.EmployeeType;
-import Time.Date;
-import Utilities.Order;
-import Utilities.PhoneNumber;
-import Utilities.ServiceType;
-import Utilities.Shift;
 
 import java.util.*;
+
 public class Menu {
+    Scanner input = new Scanner(System.in);
+    Function actions = new Function();
 
-
-    public void showMenu(){
-        Employee e1 = new Employee("Jose", "Garcia", EmployeeType.programmer, 500,
-                new Date(25,9,2015), Shift.morning);
-        Client c1 = new Client("Ricardo","Rito",1,new PhoneNumber(227,5635243,
-                "Movistar"),
-                new Date(25,7,1999));
-        Order order = new Order(123,c1,e1,"CONTRATACION",ServiceType.InternetPlusPhone);
-        Administrator administrator = new Administrator();
-
+    public void showMenu() {
         int op;
-        Scanner input = new Scanner(System.in);
+
         do {
             System.out.println("1-. ANADIR CLIENTE");
             System.out.println("2.- CREAR UNA ORDEN");
@@ -33,43 +19,39 @@ public class Menu {
             System.out.println("7.- VER EMPLEADOS");
             System.out.println("8.- VER CLIENTES");
             System.out.println("9.- SALIR");
-
             System.out.print("Selecciona una opcion: ");
             op = input.nextInt();
-            switch (op){
+
+            switch (op) {
                 case 1 -> {
-                    System.out.println(administrator.addClient(c1));
-                }
+                    actions.addClient();
+               }
 
                 case 2 -> {
-                    administrator.addOrder(order);
-
-
+                   actions.addOrder();
                 }
                 case 3 -> {
-                    System.out.println("*********************************");
-                    System.out.println( administrator.contractEmployee(e1));
-                    System.out.println("*********************************");
+                    actions.contractEmployee();
                 }
                 case 4 -> {
-                    administrator.fireEmploye();
+                    actions.fireEmployee();
                 }
                 case 5 -> {
-                    administrator.removeOrder();
-                    System.out.println("Se ha removido la orden");
+                    actions.removeOrder();
+
                 }
                 case 6 -> {
                     System.out.println("ORDENES CREADAS");
-                    administrator.showOrders();
+                    actions.showOrders();
                 }
                 case 7 -> {
                     System.out.println("EMPLEADOS");
-                   administrator.showStaff();
+                    actions.showStaff();
 
                 }
                 case 8 -> {
                     System.out.println("CLIENTES");
-                    administrator.showClients();
+                    actions.showClients();
                 }
                 case 9 -> {
                     System.out.println("SALIR");
@@ -79,10 +61,8 @@ public class Menu {
                 }
 
 
-
             }
-        }while (op < 9);
-
+        } while (op < 9);
 
 
     }

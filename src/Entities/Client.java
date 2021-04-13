@@ -11,23 +11,18 @@ import java.util.List;
 public class Client extends Person {
     private final int clientId;
     private final Date clientSince;
+    public static int count;
     private List<ServiceType> services = new ArrayList<>();
 
-    public Client(String name, String lastname, int clientId, PhoneNumber phoneNumber, Date clientSince) {
+    public Client(String name, String lastname, PhoneNumber phoneNumber, Date clientSince) {
         super(name, lastname);
-        this.clientId = clientId;
+        this.clientId = ++count;
         super.phoneNumbers.add(phoneNumber);
         this.clientSince = clientSince;
 
     }
 
-    public Client(String name, String lastname, int clientId,
-                  Date clientSince, List<PhoneNumber> phoneNumber, List<ServiceType> services) {
-        super(name, lastname);
-        this.clientId = clientId;
-        this.clientSince = clientSince;
-        super.phoneNumbers = phoneNumber;
-    }
+
 
 
     public int getClientid() {
@@ -35,7 +30,7 @@ public class Client extends Person {
     }
 
     @Override
-    public String show() {
+    public String toString() {
 
 
         return "Clienteid :" + clientId +
@@ -53,5 +48,10 @@ public class Client extends Person {
     public String removeService(ServiceType newService) {
         this.services.remove(newService);
         return "El servicio de %s ha sido removido".formatted(newService.toString());
+    }
+
+    @Override
+    public String show() {
+        return null;
     }
 }
