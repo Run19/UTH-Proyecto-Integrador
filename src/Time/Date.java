@@ -1,5 +1,7 @@
 package Time;
 
+import RandomDataGenerator.DataGenerator;
+
 import static Util.Util.*;
 
 public class Date {
@@ -49,6 +51,10 @@ public class Date {
         return this.day + " de " + monthName + " de " + this.year;
 
 
+    }
+
+    public static Date RandomDate(int minYear,int maxYear) {
+        return new Date(DataGenerator.random(1, 31), DataGenerator.random(1, 12), DataGenerator.random(minYear, maxYear));
     }
 
     public int getDay() {

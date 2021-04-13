@@ -21,6 +21,14 @@ public class Employee extends Person {
         this.shift = shift;
     }
 
+    public Employee(String name, String lastname, PhoneNumber phoneNumber, Entities.EmployeeType employeeType, float salary, Date employeeSince, Shift shift) {
+        super(name, lastname, phoneNumber);
+        EmployeeType = employeeType;
+        this.salary = salary;
+        this.employeeSince = employeeSince;
+        this.shift = shift;
+    }
+
     @Override
     public String show() {
         return " Nombre del empleado" + super.name;

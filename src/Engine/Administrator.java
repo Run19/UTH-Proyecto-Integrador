@@ -3,6 +3,7 @@ package Engine;
 import Entities.Client;
 import Entities.Employee;
 import Utilities.Order;
+import Utilities.ServiceType;
 
 
 import java.util.ArrayList;
@@ -15,6 +16,15 @@ public class Administrator {
     private List<Employee> staff = new ArrayList<>();
     public List<Order> orders = new ArrayList<>();
 
+    private static Administrator singleInstance;
+
+
+    public static Administrator singleInstance() {
+        if (singleInstance == null) {
+            singleInstance = new Administrator();
+        }
+        return singleInstance;
+    }
 
     public Administrator(List<Client> clients, List<Employee> staff, List<Order> orders) {
         this.clients = clients;
@@ -31,7 +41,7 @@ public class Administrator {
 
     public void showClients() {
         for (int i = 0; i < clients.size(); i++) {
-            var num = i+1;
+            var num = i + 1;
             System.out.println(num + ")" + this.clients.get(i));
 
         }
@@ -67,18 +77,16 @@ public class Administrator {
         showOrders();
         System.out.println("Que orden quieres remover?");
         int opc = input.nextInt();
-            opc = opc -1;
-            orders.remove(opc);
+        opc = opc - 1;
+        orders.remove(opc);
         System.out.println("Se ha removido correctamente");
 
 
     }
 
 
-    public void provideService() {
-        //  clients.add(new Client("Juan", "Ramon",6,new PhoneNumber(255,6534231,"TELCEL"),
-        //  new Date(11,4,2021)));
-
+    public void provideService(Client client, ServiceType serviceType) {
+        client.addService(serviceType);
     }
 
     public void contractEmployee(Employee newEmployee) {
@@ -96,7 +104,7 @@ public class Administrator {
         }
         System.out.println("Que empleado quieres remover?");
         int op = input.nextInt();
-            op = op-1;
+        op = op - 1;
         staff.remove(op);
 
         System.out.println("Se ha removido corrrectamente");

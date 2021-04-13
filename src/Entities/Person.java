@@ -46,6 +46,11 @@ public abstract class Person {
         this.lastname = lastname;
     }
 
+    public Person(String name, String lastname, PhoneNumber phoneNumber) {
+        this.name = name;
+        this.lastname = lastname;
+        this.phoneNumbers.add(phoneNumber);
+    }
 
     public abstract String show();
 

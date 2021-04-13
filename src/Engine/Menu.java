@@ -6,6 +6,7 @@ public class Menu {
     Scanner input = new Scanner(System.in);
     Function actions = new Function();
 
+
     public void showMenu() {
         int op;
 
@@ -25,10 +26,10 @@ public class Menu {
             switch (op) {
                 case 1 -> {
                     actions.addClient();
-               }
+                }
 
                 case 2 -> {
-                   actions.addOrder();
+                    actions.addOrder();
                 }
                 case 3 -> {
                     actions.contractEmployee();
