@@ -1,6 +1,6 @@
 package Time;
 
-import static Util.Util.*;
+import static Util.Util.twoDigits;
 
 public class Hour {
 

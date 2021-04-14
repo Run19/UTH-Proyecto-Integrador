@@ -12,17 +12,16 @@ public class Client extends Person {
     private final int clientId;
     private final Date clientSince;
     public static int count;
+
     private List<ServiceType> services = new ArrayList<>();
+
 
     public Client(String name, String lastname, PhoneNumber phoneNumber, Date clientSince) {
         super(name, lastname);
         this.clientId = ++count;
         super.phoneNumbers.add(phoneNumber);
         this.clientSince = clientSince;
-
     }
-
-
 
 
     public int getClientid() {
@@ -52,6 +51,10 @@ public class Client extends Person {
 
     @Override
     public String show() {
-        return null;
+        return "Clienteid :" + clientId +
+                ", Nombre: " + name + '\'' +
+                ", Apellido: " + lastname + '\'' +
+                ", Cliente desde: " + clientSince.shortDate() + '\'' +
+                ", Numeros de telefono: " + phoneNumbers;
     }
 }

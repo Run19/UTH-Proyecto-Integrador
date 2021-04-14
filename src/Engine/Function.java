@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class Function {
     Scanner input = new Scanner(System.in);
-    Administrator administrator = new Administrator();
+    Administrator administrator = Administrator.singleInstance();
 
     public void addClient() {
         System.out.println("\tANIADIR CLIENTE");
@@ -134,29 +134,29 @@ public class Function {
         System.out.println("Seleccione el turno");
         var opc = input.nextInt();
         Shift turno = null;
-        if (opc == 1 ){
+        if (opc == 1) {
             turno = Shift.morning;
-        }else if (opc == 2){
+        } else if (opc == 2) {
             turno = Shift.afteernoon;
-        }else if (opc == 3){
+        } else if (opc == 3) {
             turno = Shift.night;
-        }else{
+        } else {
             System.out.println("Seleccione una opcion valida");
         }
 
 
-        administrator.contractEmployee(new Employee(name, lastName, type, salary,new Date(day,month,year),turno ));
+        administrator.contractEmployee(new Employee(name, lastName, type, salary, new Date(day, month, year), turno));
     }
 
-    public void showStaff(){
+    public void showStaff() {
         administrator.showStaff();
     }
 
-    public void fireEmployee(){
+    public void fireEmployee() {
         administrator.fireEmploye();
     }
 
-    public void removeOrder(){
+    public void removeOrder() {
         administrator.removeOrder();
     }
 

@@ -6,18 +6,17 @@ import Utilities.Shift;
 
 public class Employee extends Person {
 
-
     private EmployeeType EmployeeType;
-    private float salary;
-    private Date employeeSince;
     private Shift shift;
+    private float salary;
+    private Date contractDate;
 
 
     public Employee(String name, String lastname, Entities.EmployeeType employeeType, float salary, Date employeeSince, Shift shift) {
         super(name, lastname);
         EmployeeType = employeeType;
         this.salary = salary;
-        this.employeeSince = employeeSince;
+        this.contractDate = employeeSince;
         this.shift = shift;
     }
 
@@ -25,26 +24,24 @@ public class Employee extends Person {
         super(name, lastname, phoneNumber);
         EmployeeType = employeeType;
         this.salary = salary;
-        this.employeeSince = employeeSince;
+        this.contractDate = employeeSince;
         this.shift = shift;
     }
 
     @Override
     public String show() {
-        return " Nombre del empleado" + super.name;
+        return " Nombre del empleado " + super.name;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "Employee" +
                 " name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", EmployeeType=" + EmployeeType +
-                ", salary=" + salary +
-                ", employeeSince=" + employeeSince.shortDate() +
-                ", shift=" + shift +
-
-                '}';
+                ", salary =" + salary +
+                ", employeeSince =" + contractDate.shortDate() +
+                ", shift=" + shift;
     }
 
     public EmployeeType getEmployeeType() {
@@ -63,12 +60,12 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
-    public Date getEmployeeSince() {
-        return employeeSince;
+    public Date getContractDate() {
+        return contractDate;
     }
 
-    public void setEmployeeSince(Date employeeSince) {
-        this.employeeSince = employeeSince;
+    public void setContractDate(Date contractDate) {
+        this.contractDate = contractDate;
     }
 
     public Shift getShift() {

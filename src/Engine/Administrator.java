@@ -55,13 +55,24 @@ public class Administrator {
         }
     }
 
-    public void addClient(Client c) {
-        this.clients.add(c);
+    /*
+     * @param client: El cliente a agregar a la lista de clientes
+     * @return: no retorna
+     * */
+    public void addClient(Client client) {
+        this.clients.add(client);
         System.out.println("Se ha agregado correctamente");
     }
 
+    public void removeClient(Client cliente) {
+        this.clients.remove(cliente);
+        System.out.println("Se ha eliminado el cliente %s".formatted(cliente.getName()));
+    }
+
+
     public void addOrder(Order order) {
         this.orders.add(order);
+
         System.out.println("Se ha creado la Orden");
     }
 
@@ -91,7 +102,6 @@ public class Administrator {
 
     public void contractEmployee(Employee newEmployee) {
         staff.add(newEmployee);
-
         System.out.printf("%s ha sido contratado%n", newEmployee.getName());
     }
 

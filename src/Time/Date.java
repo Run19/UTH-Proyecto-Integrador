@@ -2,7 +2,7 @@ package Time;
 
 import RandomDataGenerator.DataGenerator;
 
-import static Util.Util.*;
+import static Util.Util.twoDigits;
 
 public class Date {
     private int day;
@@ -31,7 +31,6 @@ public class Date {
     public String longDate() {
         String monthName = "";
         int month = this.month;
-
         switch (month) {
 
             case 1 -> monthName = "Enero";
@@ -53,7 +52,7 @@ public class Date {
 
     }
 
-    public static Date RandomDate(int minYear,int maxYear) {
+    public static Date RandomDate(int minYear, int maxYear) {
         return new Date(DataGenerator.random(1, 31), DataGenerator.random(1, 12), DataGenerator.random(minYear, maxYear));
     }
 

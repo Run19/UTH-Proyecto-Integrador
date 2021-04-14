@@ -52,7 +52,6 @@ public abstract class Person {
         this.phoneNumbers.add(phoneNumber);
     }
 
-    public abstract String show();
 
     public String getName() {
         return this.name;
@@ -69,4 +68,7 @@ public abstract class Person {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
+    //
+    public abstract String show();
 }

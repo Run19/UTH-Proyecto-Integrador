@@ -5,7 +5,7 @@ import java.util.*;
 public class Menu {
     Scanner input = new Scanner(System.in);
     Function actions = new Function();
-
+//Contratar empleados, proveer servicios y generar ordenes
 
     public void showMenu() {
         int op;
