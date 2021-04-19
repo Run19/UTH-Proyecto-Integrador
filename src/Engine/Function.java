@@ -31,10 +31,10 @@ public class Function {
         System.out.println("\tANIADIR CLIENTE");
 
         System.out.println("Escribe el nombre: ");
-        var name = input.next();
+        var name = input.nextLine();
 
         System.out.println("Escribe el apellido: ");
-        var lastName = input.next();
+        var lastName = input.nextLine();
 
         System.out.println("NUMERO DE TELEFONO");
 
