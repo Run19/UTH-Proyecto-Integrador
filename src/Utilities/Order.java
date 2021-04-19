@@ -1,9 +1,6 @@
 package Utilities;
 
 import Entities.Client;
-import Entities.Employee;
-
-import javax.swing.plaf.IconUIResource;
 
 public class Order {
 
@@ -12,10 +9,10 @@ public class Order {
 
     private String orderDescription;
     private ServiceType serviceType;
-    public static  int cont;
+    public static int cont;
 
 
-    public Order( Client client, String orderDescription,ServiceType serviceType) {
+    public Order(Client client, String orderDescription, ServiceType serviceType) {
         this.orderId = ++cont;
         this.client = client;
 
@@ -23,7 +20,6 @@ public class Order {
         this.serviceType = serviceType;
 
     }
-
 
 
     @Override

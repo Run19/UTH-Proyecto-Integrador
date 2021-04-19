@@ -15,6 +15,21 @@ public class Client extends Person {
 
     private List<ServiceType> services = new ArrayList<>();
 
+    public int getClientId() {
+        return clientId;
+    }
+
+    public Date getClientSince() {
+        return clientSince;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public List<ServiceType> getServices() {
+        return services;
+    }
 
     public Client(String name, String lastname, PhoneNumber phoneNumber, Date clientSince) {
         super(name, lastname);

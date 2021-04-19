@@ -5,18 +5,24 @@ public enum ServiceType {
     LocalPhone("Telefonia local", 300),
     InternetPlusPhone("Internet+Telefonia", 550);
 
-    private final String nameService;
+    private final String serviceName;
     private final double servicePrice;
 
 
     ServiceType(String nameService, double servicePrice) {
-        this.nameService = nameService;
+        this.serviceName = nameService;
 
         this.servicePrice = servicePrice;
     }
 
-    public String getNameService() {
-        return nameService;
+    public String getServiceData() {
+
+        return "%s %.2f".formatted(serviceName, servicePrice);
+    }
+
+
+    public String getServiceName() {
+        return serviceName;
     }
 
     public double getServicePrice() {

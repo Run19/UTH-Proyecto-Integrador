@@ -10,4 +10,17 @@ public class Util {
         }
         return number;
     }
+
+
+    public static StringBuilder drawTitle(char character, String title) {
+        StringBuilder titleDecorated = new StringBuilder();
+
+        String charactersLine = String.valueOf(character).repeat(title.length());
+
+        titleDecorated.append(charactersLine).append("\n");
+        titleDecorated.append(title).append("\n");
+        titleDecorated.append(charactersLine);
+
+        return titleDecorated;
+    }
 }
