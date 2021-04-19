@@ -19,7 +19,8 @@ public class Menu {
             System.out.println("6.- VER ORDENES CREADAS");
             System.out.println("7.- VER EMPLEADOS");
             System.out.println("8.- VER CLIENTES");
-            System.out.println("9.- SALIR");
+            System.out.println("9.- CONTRATAR SERVICIO");
+            System.out.println("10.- SALIR");
             System.out.print("Selecciona una opcion: ");
             op = input.nextInt();
 
@@ -55,7 +56,11 @@ public class Menu {
                     actions.showClients();
                 }
                 case 9 -> {
-                    System.out.println("SALIR");
+                    System.out.println("CONTRATAR SERVICIO");
+                    actions.provideService();
+                }
+                case 10 ->{
+                    System.out.println("ADIOS");
                 }
                 default -> {
                     System.out.println("Usa una opcion valida");
@@ -63,7 +68,7 @@ public class Menu {
 
 
             }
-        } while (op < 9);
+        } while (op < 10);
 
 
     }

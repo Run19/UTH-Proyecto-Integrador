@@ -11,7 +11,6 @@ public enum ServiceType {
 
     ServiceType(String nameService, double servicePrice) {
         this.nameService = nameService;
-
         this.servicePrice = servicePrice;
     }
 

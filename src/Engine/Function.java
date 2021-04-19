@@ -67,25 +67,8 @@ public class Function {
         var client = administrator.clients.get(numC);
         System.out.println("Descripcion de la orden");
         var descript = input.next();
-        System.out.println("\tSERVICIO");
-        System.out.println("1.- " + ServiceType.Internet + " $" + ServiceType.Internet.getServicePrice());
-        System.out.println("2.- " + ServiceType.LocalPhone + " $"+  ServiceType.LocalPhone.getServicePrice());
-        System.out.println("3.- " + ServiceType.InternetPlusPhone+ " $" + ServiceType.InternetPlusPhone.getServicePrice());
-        System.out.println("Seleccione el tipo de servicio");
-        var opc = input.nextInt();
-        ServiceType type = null;
-        if (opc == 1) {
-            type = ServiceType.Internet;
-        } else if (opc == 2) {
-            type = ServiceType.LocalPhone;
-        } else if (opc == 3) {
-            type = ServiceType.InternetPlusPhone;
-        } else {
-            System.out.println("Selecciona una opcion valida ");
-        }
 
-
-        administrator.addOrder(new Order(client, descript, type));
+        administrator.addOrder(new Order(client, descript));
     }
 
     public void showOrders() {
@@ -146,6 +129,33 @@ public class Function {
 
 
         administrator.contractEmployee(new Employee(name, lastName, type, salary, new Date(day, month, year), turno));
+    }
+
+    public void provideService() {
+        Scanner input = new Scanner(System.in);
+        ServiceType type = null;
+        administrator.showClients();
+        System.out.println("Selecciona el cliente: ");
+        var cliente = input.nextInt();
+        var numC = cliente - 1;
+        var client = administrator.clients.get(numC);
+        System.out.println("Que tipo de servicio quieres contratar");
+        System.out.println("1.- " + ServiceType.Internet.getNameService() + " $" + ServiceType.Internet.getServicePrice());
+        System.out.println("2.- " + ServiceType.LocalPhone.getNameService() + " $" + ServiceType.LocalPhone.getServicePrice());
+        System.out.println("3.- " + ServiceType.InternetPlusPhone.getNameService() + " $" + ServiceType.InternetPlusPhone.getServicePrice());
+
+        int opc = input.nextInt();
+        if (opc == 1) {
+            type = ServiceType.Internet;
+        } else if (opc == 2) {
+            type = ServiceType.LocalPhone;
+        } else if (opc == 3) {
+            type = ServiceType.InternetPlusPhone;
+        } else {
+            System.out.println("Selecciona una opcion valida ");
+        }
+        administrator.provideService(client, type);
+        System.out.println("Al cliente " + client.getName() + " Se ha agregado el servicio: " + type.getNameService() + " $" + type.getServicePrice());
     }
 
     public void showStaff() {

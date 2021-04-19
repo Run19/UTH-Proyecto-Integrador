@@ -6,7 +6,7 @@ import Utilities.Shift;
 
 public class DataGenerator {
     private static final String[] names = new String[]{"Juanito", "Pedrin", "Chema", "Fani la mas hermosa",
-            "El macflai", "Run Run", "El chuys", "La heidis", "Oskr", "La otako", "La ex que chema no supera"};
+            "El macflai", "Run Run", "El chuys", "Oskr", "La otako"};
     private static final String[] companies = new String[]{"Ei ti an ti", "Movistar1", "Telcel", "Pillofon"};
     private static final String[] lastNames = new String[]{"Lopez", "Perez", "Rito", "Garcia",
             "Dorantes", "Run", "Derecho", "Ramirez", "Aguilar", "kawasaki", "De la losa"

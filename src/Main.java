@@ -28,14 +28,14 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             var currentClientName = DataGenerator.getRandonName();
             var currentClientLast = DataGenerator.getRandomLastName();
-            var currentPhone = new PhoneNumber(DataGenerator.random(100, 999), DataGenerator.random(100, 999), DataGenerator.getRandomCompany());
+            var currentPhone = new PhoneNumber(DataGenerator.random(100, 999), DataGenerator.random(100, 9999999), DataGenerator.getRandomCompany());
             Administrator.singleInstance().addClient(new Client(currentClientName, currentClientLast, currentPhone,
                     Date.RandomDate(2010, 2021)));
         }
         for (int i = 0; i < 10; i++) {
             var currentClientName = DataGenerator.getRandonName();
             var currentClientLast = DataGenerator.getRandomLastName();
-            var currentPhone = new PhoneNumber(DataGenerator.random(100, 999), DataGenerator.random(100, 999), DataGenerator.getRandomCompany());
+            var currentPhone = new PhoneNumber(DataGenerator.random(100, 999), DataGenerator.random(100, 9999999), DataGenerator.getRandomCompany());
 
 
             Administrator.singleInstance().contractEmployee(new Employee(currentClientName, currentClientLast, currentPhone,

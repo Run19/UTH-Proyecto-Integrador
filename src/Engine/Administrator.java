@@ -66,7 +66,7 @@ public class Administrator {
 
     public void removeClient(Client cliente) {
         this.clients.remove(cliente);
-        System.out.println("Se ha eliminado el cliente %s".formatted(cliente.getName()));
+
     }
 
 
@@ -98,6 +98,7 @@ public class Administrator {
 
     public void provideService(Client client, ServiceType serviceType) {
         client.addService(serviceType);
+        System.out.println("El servicio se ha aniadido");
     }
 
     public void contractEmployee(Employee newEmployee) {
@@ -110,7 +111,7 @@ public class Administrator {
 
         for (int i = 0; i < staff.size(); i++) {
             int num = i + 1;
-            System.out.println(num + ")" + staff.get(i).getName());
+            System.out.println(num + ")" + staff.get(i));
         }
         System.out.println("Que empleado quieres remover?");
         int op = input.nextInt();
