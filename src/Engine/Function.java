@@ -68,9 +68,9 @@ public class Function {
         System.out.println("Descripcion de la orden");
         var descript = input.next();
         System.out.println("\tSERVICIO");
-        System.out.println("1.- " + ServiceType.Internet);
-        System.out.println("2.- " + ServiceType.LocalPhone);
-        System.out.println("3.- " + ServiceType.InternetPlusPhone);
+        System.out.println("1.- " + ServiceType.Internet + " $" + ServiceType.Internet.getServicePrice());
+        System.out.println("2.- " + ServiceType.LocalPhone + " $"+  ServiceType.LocalPhone.getServicePrice());
+        System.out.println("3.- " + ServiceType.InternetPlusPhone+ " $" + ServiceType.InternetPlusPhone.getServicePrice());
         System.out.println("Seleccione el tipo de servicio");
         var opc = input.nextInt();
         ServiceType type = null;

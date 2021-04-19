@@ -33,6 +33,7 @@ public class Order {
                 ", client=" + client.getName() +
                 ", orderDescription='" + orderDescription + '\'' +
                 ", serviceType=" + serviceType +
+                    " $" + serviceType.getServicePrice() +
                 '}';
     }
 }
