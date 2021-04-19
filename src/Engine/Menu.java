@@ -57,6 +57,7 @@ public class Menu {
                 }
                 case 9 -> {
                     System.out.println("CONTRATAR SERVICIO");
+                    System.out.println("Para contratar un servicio el cliente tiene que estar dado de alta");
                     actions.provideService();
                 }
                 case 10 ->{

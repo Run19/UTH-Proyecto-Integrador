@@ -77,10 +77,10 @@ public class Function {
 
     public void contractEmployee() {
         System.out.println("Escribe el nombre: ");
-        var name = input.next();
+        var name = input.nextLine();
 
         System.out.println("Escribe el apellido: ");
-        var lastName = input.next();
+        var lastName = input.nextLine();
 
 
         System.out.println("1.- " + EmployeeType.programmer);
@@ -111,9 +111,9 @@ public class Function {
         System.out.println("Escriba el anio: ");
         var year = input.nextInt();
         System.out.println("Turno: ");
-        System.out.println("1.- " + Shift.morning);
-        System.out.println("2.- " + Shift.afteernoon);
-        System.out.println("3.- " + Shift.night);
+        System.out.println("1.- " + Shift.morning.getName());
+        System.out.println("2.- " + Shift.afteernoon.getName());
+        System.out.println("3.- " + Shift.night.getName());
         System.out.println("Seleccione el turno");
         var opc = input.nextInt();
         Shift turno = null;
@@ -126,9 +126,16 @@ public class Function {
         } else {
             System.out.println("Seleccione una opcion valida");
         }
+        System.out.println("Numero de telefono");
+        System.out.println("Escribe la lada");
+        var lada = input.nextInt();
+        System.out.println("Escribe el numero");
+        var num = input.nextInt();
+        System.out.println("Escribe la companiia");
+        var company = input.next();
 
 
-        administrator.contractEmployee(new Employee(name, lastName, type, salary, new Date(day, month, year), turno));
+        administrator.contractEmployee(new Employee(name, lastName,new PhoneNumber(lada,num,company) ,type, salary, new Date(day, month, year), turno));
     }
 
     public void provideService() {
