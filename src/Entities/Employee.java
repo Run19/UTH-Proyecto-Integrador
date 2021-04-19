@@ -35,13 +35,14 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return "Employee" +
-                " name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", EmployeeType=" + EmployeeType +
-                ", salary =" + salary +
-                ", employeeSince =" + contractDate.shortDate() +
-                ", shift=" + shift;
+        return " Nombre: " + name +
+                ", Apellido: " + lastname +
+                ", Tipo de empleado: " + EmployeeType +
+                ", Salario: $" + salary +
+                ", Empleado desde: " + contractDate.shortDate() +
+                ", Turno: " + shift.getName()+
+                ", Numeros de telefono " + phoneNumbers;
+
     }
 
     public EmployeeType getEmployeeType() {

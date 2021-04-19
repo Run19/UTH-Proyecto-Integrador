@@ -47,16 +47,17 @@ public class Client extends Person {
     public String toString() {
 
 
-        return "Clienteid :" + clientId +
-                ", Nombre: " + name + '\'' +
-                ", Apellido: " + lastname + '\'' +
-                ", Cliente desde: " + clientSince.shortDate() + '\'' +
-                ", Numeros de telefono: " + phoneNumbers;
+        return "Id Cliente :" + clientId +
+                ", Nombre: " + name +
+                ", Apellido: " + lastname +
+                ", Cliente desde: " + clientSince.shortDate() +
+                ", Numeros de telefono: " + phoneNumbers +
+                ", Servicios contratados " + services;
     }
 
-    public String addService(ServiceType newService) {
+    public void addService(ServiceType newService) {
         this.services.add(newService);
-        return "El servicio de %s ha sido agregado".formatted(newService.toString());
+
     }
 
     public String removeService(ServiceType newService) {
@@ -66,10 +67,12 @@ public class Client extends Person {
 
     @Override
     public String show() {
-        return "Clienteid :" + clientId +
-                ", Nombre: " + name + '\'' +
-                ", Apellido: " + lastname + '\'' +
-                ", Cliente desde: " + clientSince.shortDate() + '\'' +
-                ", Numeros de telefono: " + phoneNumbers;
+        return "id Cliente :" + clientId +
+                ", Nombre: " + name +
+                ", Apellido: " + lastname +
+                ", Cliente desde: " + clientSince.shortDate() +
+                ", Numeros de telefono: " + phoneNumbers +
+                ", Servicios contratados " + services;
+
     }
 }
