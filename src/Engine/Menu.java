@@ -20,25 +20,31 @@ public class Menu {
             System.out.println("7.- VER EMPLEADOS");
             System.out.println("8.- VER CLIENTES");
             System.out.println("9.- CONTRATAR SERVICIO");
-            System.out.println("10.- SALIR");
+            System.out.println("10.- ANADIR NUMERO DE TELEFONO A CLIENTE");
+            System.out.println("11.- SALIR");
             System.out.print("Selecciona una opcion: ");
             op = input.nextInt();
 
             switch (op) {
                 case 1 -> {
+                    System.out.println("ANADIR CLIENTE");
                     actions.addClient();
                 }
 
                 case 2 -> {
+                    System.out.println("ANADIR ORDEN");
                     actions.addOrder();
                 }
                 case 3 -> {
+                    System.out.println("CONTRATAR");
                     actions.contractEmployee();
                 }
                 case 4 -> {
+                    System.out.println("REMOVER EMPLEADO");
                     actions.fireEmployee();
                 }
                 case 5 -> {
+                    System.out.println("REMOVER ORDEN");
                     actions.removeOrder();
 
                 }
@@ -61,6 +67,10 @@ public class Menu {
                     actions.provideService();
                 }
                 case 10 ->{
+                    System.out.println("ANADIR NUMERO DE TELEFONO A CLIENTE");
+                    actions.addNumberClient();
+                }
+                case 11 ->{
                     System.out.println("ADIOS");
                 }
                 default -> {
@@ -69,8 +79,7 @@ public class Menu {
 
 
             }
-        } while (op < 10);
-
+        } while (op < 11);
 
     }
 }

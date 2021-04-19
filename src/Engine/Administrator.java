@@ -3,6 +3,7 @@ package Engine;
 import Entities.Client;
 import Entities.Employee;
 import Utilities.Order;
+import Utilities.PhoneNumber;
 import Utilities.ServiceType;
 
 
@@ -92,6 +93,10 @@ public class Administrator {
         orders.remove(opc);
         System.out.println("Se ha removido correctamente");
 
+
+    }
+    public void addNumberClient(Client client, PhoneNumber phone){
+        client.addNumber(phone);
 
     }
 

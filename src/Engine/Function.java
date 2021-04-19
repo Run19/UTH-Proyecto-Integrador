@@ -60,7 +60,7 @@ public class Function {
     public void addOrder() {
 
 
-        administrator.showClients();
+        showClients();
         System.out.println("Selecciona el cliente: ");
         var cliente = input.nextInt();
         var numC = cliente - 1;
@@ -163,6 +163,29 @@ public class Function {
         }
         administrator.provideService(client, type);
         System.out.println("Al cliente " + client.getName() + " Se ha agregado el servicio: " + type.getNameService() + " $" + type.getServicePrice());
+    }
+
+    public void addNumberClient(){
+        showClients();
+        System.out.println("Selecciona el cliente: ");
+        var cliente = input.nextInt();
+        var numC = cliente - 1;
+        var client = administrator.clients.get(numC);
+        System.out.println("Numero de telefono");
+        System.out.println("Escribe la lada");
+        var lada = input.nextInt();
+        System.out.println("Escribe el numero");
+        var num = input.nextInt();
+        System.out.println("Escribe la companiia");
+        var company = input.next();
+
+
+
+        administrator.addNumberClient(client, new PhoneNumber(lada,num,company));
+
+
+
+
     }
 
     public void showStaff() {
