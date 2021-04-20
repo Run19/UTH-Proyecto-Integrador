@@ -10,14 +10,23 @@ import Utilities.PhoneNumber;
 import Utilities.ServiceType;
 import Utilities.Shift;
 
-import javax.swing.*;
-import java.util.EmptyStackException;
 import java.util.Scanner;
 
+/**
+ * @author Ian Cazabal Villada
+ * @author Jose Maria Garcia Ramirez
+ * @author Fani Michel Izquierdo Sosa
+ * @author Erick Jesus Mota Oaxaca
+ * @author Ricardo Rito Anguiano
+ */
 public class Function {
     Scanner input = new Scanner(System.in);
-    Administrator administrator = Administrator.singleInstance();
+    Administrator administrator = new Administrator();
 
+    /**
+     * Metodo que se encarga de tomar los datos del cliente y añadirlo al
+     * sistema
+     */
     public void addClient() {
         System.out.println("\tANIADIR CLIENTE");
 
@@ -53,10 +62,17 @@ public class Function {
                 new Date(day, month, year)));
     }
 
+    /**
+     * Metodo que sirve para mostrar a los clientes registrados
+     */
     public void showClients() {
         administrator.showClients();
     }
 
+    /**
+     * Metodo que sirve para recolectar informacion para añadir una nueva
+     * orden
+     */
     public void addOrder() {
 
 
@@ -71,10 +87,17 @@ public class Function {
         administrator.addOrder(new Order(client, descript));
     }
 
+    /**
+     * Metodo que se encarga de mostrar a los clientes registrados
+     */
     public void showOrders() {
         administrator.showOrders();
     }
 
+    /**
+     * Metodo que se encarga de tomar los datos del nuevo empleado y añadirlo al
+     * sistema
+     */
     public void contractEmployee() {
         System.out.println("Escribe el nombre: ");
         var name = input.nextLine();
@@ -135,9 +158,12 @@ public class Function {
         var company = input.next();
 
 
-        administrator.contractEmployee(new Employee(name, lastName,new PhoneNumber(lada,num,company) ,type, salary, new Date(day, month, year), turno));
+        administrator.contractEmployee(new Employee(name, lastName, new PhoneNumber(lada, num, company), type, salary, new Date(day, month, year), turno));
     }
 
+    /*
+     * provee el servicio a un cliente
+     * */
     public void provideService() {
         Scanner input = new Scanner(System.in);
         ServiceType type = null;
@@ -165,7 +191,10 @@ public class Function {
         System.out.println("Al cliente " + client.getName() + " Se ha agregado el servicio: " + type.getNameService() + " $" + type.getServicePrice());
     }
 
-    public void addNumberClient(){
+    /**
+     * agrega un numero de telefono al cliente
+     */
+    public void addNumberClient() {
         showClients();
         System.out.println("Selecciona el cliente: ");
         var cliente = input.nextInt();
@@ -180,22 +209,28 @@ public class Function {
         var company = input.next();
 
 
-
-        administrator.addNumberClient(client, new PhoneNumber(lada,num,company));
-
-
+        administrator.addNumberClient(client, new PhoneNumber(lada, num, company));
 
 
     }
 
+    /**
+     * Metodo que se encarga de mostrar el personal de la empresa
+     */
     public void showStaff() {
         administrator.showStaff();
     }
 
+    /**
+     * Metodo que realiza la función de remover empleados
+     */
     public void fireEmployee() {
         administrator.fireEmploye();
     }
 
+    /**
+     * Metodo que se encarga de remover una orden
+     */
     public void removeOrder() {
         administrator.removeOrder();
     }

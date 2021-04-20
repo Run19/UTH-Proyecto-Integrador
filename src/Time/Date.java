@@ -1,6 +1,5 @@
 package Time;
 
-import RandomDataGenerator.DataGenerator;
 
 import static Util.Util.twoDigits;
 
@@ -52,9 +51,6 @@ public class Date {
 
     }
 
-    public static Date RandomDate(int minYear, int maxYear) {
-        return new Date(DataGenerator.random(1, 31), DataGenerator.random(1, 12), DataGenerator.random(minYear, maxYear));
-    }
 
     public int getDay() {
         return this.day;

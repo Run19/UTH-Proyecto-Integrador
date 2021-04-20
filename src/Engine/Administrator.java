@@ -11,22 +11,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Esta clase solo puede ser modificada por el o los administradores, esta compuesta por listas que
+ * almacenan los datos de Client,Employee y Order
+ *
+ * @author Ian Cazabal Villada
+ * @author Jose Maria Garcia Ramirez
+ * @author Fani Michel Izquierdo Sosa
+ * @author Erick Jesus Mota Oaxaca
+ * @author Ricardo Rito Anguiano
+ */
+
 public class Administrator {
 
     public List<Client> clients = new ArrayList<>();
     private List<Employee> staff = new ArrayList<>();
     public List<Order> orders = new ArrayList<>();
 
-    private static Administrator singleInstance;
-
-
-    public static Administrator singleInstance() {
-        if (singleInstance == null) {
-            singleInstance = new Administrator();
-        }
-        return singleInstance;
-    }
-
+    /**
+     * Metodo constructor que te permitira establecer los valores correspondientes a cada lista
+     *
+     * @param clients
+     * @param staff
+     * @param orders
+     */
     public Administrator(List<Client> clients, List<Employee> staff, List<Order> orders) {
         this.clients = clients;
         this.staff = staff;
@@ -40,6 +48,9 @@ public class Administrator {
 
     }
 
+    /**
+     * Metodo que muestra a los clientes registrados
+     */
     public void showClients() {
         for (int i = 0; i < clients.size(); i++) {
             var num = i + 1;
@@ -49,6 +60,9 @@ public class Administrator {
 
     }
 
+    /**
+     * Metodo que muestra al personal de la empresa
+     */
     public void showStaff() {
         for (int i = 0; i < staff.size(); i++) {
             int num = i + 1;
@@ -56,10 +70,12 @@ public class Administrator {
         }
     }
 
-    /*
-     * @param client: El cliente a agregar a la lista de clientes
-     * @return: no retorna
-     * */
+    /**
+     * Metodo que sirve para añadir un nuevo cliente
+     *
+     * @param c Cliente nuevo
+     * @return regresa un String que indica el nombre del nuevo cliente
+     */
     public void addClient(Client client) {
         this.clients.add(client);
         System.out.println("Se ha agregado correctamente");
@@ -70,13 +86,20 @@ public class Administrator {
 
     }
 
-
+    /**
+     * Metodo que sirve para añadir una nueva orden
+     *
+     * @param order nueva Order
+     */
     public void addOrder(Order order) {
         this.orders.add(order);
 
         System.out.println("Se ha creado la Orden");
     }
 
+    /**
+     * Metodo que sirve para mostrar las ordenes disponibles
+     */
     public void showOrders() {
         for (int i = 0; i < orders.size(); i++) {
             var num = i + 1;
@@ -84,6 +107,9 @@ public class Administrator {
         }
     }
 
+    /**
+     * Metodo que sirve para remover una orden
+     */
     public void removeOrder() {
         Scanner input = new Scanner(System.in);
         showOrders();
@@ -95,22 +121,37 @@ public class Administrator {
 
 
     }
-    public void addNumberClient(Client client, PhoneNumber phone){
+
+    /*
+     * Metodo que sirve para agregarle un numero de telefono al cliente
+     */
+    public void addNumberClient(Client client, PhoneNumber phone) {
         client.addNumber(phone);
 
     }
 
 
+    /**
+     * Metodo que sirve para agregarle un numero de telefono al cliente
+     */
     public void provideService(Client client, ServiceType serviceType) {
         client.addService(serviceType);
         System.out.println("El servicio se ha aniadido");
     }
 
+    /**
+     * Metodo que sirve para registrar la contratacion de un empleado
+     *
+     * @param newEmployee nuevo empleado
+     */
     public void contractEmployee(Employee newEmployee) {
         staff.add(newEmployee);
         System.out.printf("%s ha sido contratado%n", newEmployee.getName());
     }
 
+    /**
+     * Metodo que sirve para remover empleados de nuestra lista Employee
+     */
     public void fireEmploye() {
         Scanner input = new Scanner(System.in);
 

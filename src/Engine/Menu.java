@@ -2,10 +2,27 @@ package Engine;
 
 import java.util.*;
 
+
+/**
+ * Clase creada para poder visualizar las funciones principales de nuestra aplicacion
+ *
+ * @author Ian Cazabal Villada
+ * @author Jose Maria Garcia Ramirez
+ * @author Fani Michel Izquierdo Sosa
+ * @author Erick Jesus Mota Oaxaca
+ * @author Ricardo Rito Anguiano
+ */
+
 public class Menu {
     Scanner input = new Scanner(System.in);
     Function actions = new Function();
 //Contratar empleados, proveer servicios y generar ordenes
+
+    /**
+     * Metodo en el que se valida la opción de entrada del usuario para asi poder
+     * darle el resultado esperado, también se declaro un nuevo empleado, un cliente
+     * y una orden nueva
+     */
 
     public void showMenu() {
         int op;
@@ -66,11 +83,11 @@ public class Menu {
                     System.out.println("Para contratar un servicio el cliente tiene que estar dado de alta");
                     actions.provideService();
                 }
-                case 10 ->{
+                case 10 -> {
                     System.out.println("ANADIR NUMERO DE TELEFONO A CLIENTE");
                     actions.addNumberClient();
                 }
-                case 11 ->{
+                case 11 -> {
                     System.out.println("ADIOS");
                 }
                 default -> {
