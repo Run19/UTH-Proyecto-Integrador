@@ -10,10 +10,10 @@ public class Order {
 
     private String orderDescription;
 
-    public static  int cont;
+    public static int cont;
 
 
-    public Order( Client client, String orderDescription) {
+    public Order(Client client, String orderDescription) {
         this.orderId = ++cont;
         this.client = client;
         this.orderDescription = orderDescription;
@@ -21,12 +21,10 @@ public class Order {
 
     }
 
-
-
     @Override
     public String toString() {
         return "Orden Id: " + orderId +
-                ", cliente: " + client.getName() +" " + client.getLastname() +
-                ", Descripcion de la orden:" + orderDescription ;
+                ", cliente: " + client.getName() + " " + client.getLastname() +
+                ", Descripcion de la orden:" + orderDescription;
     }
 }

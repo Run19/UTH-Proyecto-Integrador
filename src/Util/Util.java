@@ -1,6 +1,7 @@
 package Util;
 
 public class Util {
+
     public static String twoDigits(int num) {
         String number = "" + num;
         if (num < 10) {

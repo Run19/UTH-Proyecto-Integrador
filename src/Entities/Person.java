@@ -3,8 +3,8 @@ package Entities;
 import Utilities.PhoneNumber;
 
 import java.util.*;
+
 /**
- *
  * @author Ian Cazabal Villada
  * @author Jose Maria Garcia Ramirez
  * @author Fani Michel Izquierdo Sosa
@@ -27,9 +27,11 @@ public abstract class Person {
         }
 
     }
+
     /**
      * Este metodo realiza la función de añadir un numero telefonico
      * del objeto persona
+     *
      * @param phoneNumber
      */
     public void addNumber(PhoneNumber phoneNumber) {
@@ -40,6 +42,7 @@ public abstract class Person {
 
     /**
      * Metodo encargado de remover un numero de telefono de la clase persona
+     *
      * @return Regresa una cadena de texto confirmando que el numero fue removido
      */
     public String removeNumber() {
@@ -58,6 +61,7 @@ public abstract class Person {
 
     /**
      * Metodo constructor parametrizado
+     *
      * @param name
      * @param lastname
      */
@@ -71,9 +75,11 @@ public abstract class Person {
         this.lastname = lastname;
         this.phoneNumbers.add(phoneNumber);
     }
+
     /**
      * Metodo que regresa una cadena de texto con el nombre de una
      * persona registrada en el sistema
+     *
      * @return
      */
 
@@ -83,28 +89,33 @@ public abstract class Person {
 
     /**
      * Metodo encargado de asignar un nombre al objeto persona
+     *
      * @param name
      */
     public void setName(String name) {
         this.name = name;
     }
+
     /**
      * Metodo que realiza la funcion de regresar el apellido de una
      * persona registrada en el sistema
+     *
      * @return
      */
     public String getLastname() {
         return this.lastname;
     }
+
     /**
      * Metodo que se encarga de asignar el apellido de una persona
      * registrada
+     *
      * @param lastname
      */
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
-    //
+
     public abstract String show();
 }

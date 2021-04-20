@@ -100,10 +100,10 @@ public class Function {
      */
     public void contractEmployee() {
         System.out.println("Escribe el nombre: ");
-        var name = input.nextLine();
+        var name = input.next();
 
         System.out.println("Escribe el apellido: ");
-        var lastName = input.nextLine();
+        var lastName = input.next();
 
 
         System.out.println("1.- " + EmployeeType.programmer);
@@ -207,11 +207,7 @@ public class Function {
         var num = input.nextInt();
         System.out.println("Escribe la companiia");
         var company = input.next();
-
-
         administrator.addNumberClient(client, new PhoneNumber(lada, num, company));
-
-
     }
 
     /**

@@ -15,8 +15,8 @@ import java.util.*;
 
 public class Menu {
     Scanner input = new Scanner(System.in);
+
     Function actions = new Function();
-//Contratar empleados, proveer servicios y generar ordenes
 
     /**
      * Metodo en el que se valida la opción de entrada del usuario para asi poder
@@ -28,7 +28,7 @@ public class Menu {
         int op;
 
         do {
-            System.out.println("1-. ANADIR CLIENTE");
+            System.out.println("1-. ANIADIR CLIENTE");
             System.out.println("2.- CREAR UNA ORDEN");
             System.out.println("3.- CONTRATAR");
             System.out.println("4.- REMOVER EMPLEADO");
@@ -99,4 +99,6 @@ public class Menu {
         } while (op < 11);
 
     }
+
+
 }

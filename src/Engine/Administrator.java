@@ -6,7 +6,6 @@ import Utilities.Order;
 import Utilities.PhoneNumber;
 import Utilities.ServiceType;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -45,7 +44,6 @@ public class Administrator {
         List<Client> clients = new ArrayList<>();
         List<Employee> staff = new ArrayList<>();
         List<Order> orders = new ArrayList<>();
-
     }
 
     /**
@@ -73,7 +71,7 @@ public class Administrator {
     /**
      * Metodo que sirve para añadir un nuevo cliente
      *
-     * @param c Cliente nuevo
+     * @param client nuevo
      * @return regresa un String que indica el nombre del nuevo cliente
      */
     public void addClient(Client client) {
