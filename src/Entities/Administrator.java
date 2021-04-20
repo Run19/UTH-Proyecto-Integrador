@@ -54,7 +54,8 @@ public class Administrator {
         StringBuilder staffString = new StringBuilder();
         for (int i = 0; i < staff.size(); i++) {
             int num = i + 1;
-            staffString.append(num).append(")").append(staff.get(i));
+            staffString.append(num).append(")").append(staff.get(i)).append("\n");
+
         }
         return staffString.toString();
     }
